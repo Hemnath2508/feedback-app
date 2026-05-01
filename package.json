@@ -1,0 +1,19 @@
+{
+  "name": "feedback-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@azure/storage-blob": "^12.31.0",
+    "@google/generative-ai": "^0.24.1",
+    "axios": "^1.15.2",
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}

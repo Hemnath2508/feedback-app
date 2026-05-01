@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback Analyzer</title>
+</head>
+<body style="font-family: Arial; text-align: center; margin-top: 50px;">
+
+    <h1>Feedback Analyzer 🚀</h1>
+
+    <textarea id="inputText" rows="5" cols="50" placeholder="Enter feedback here..."></textarea>
+    <br><br>
+
+    <button onclick="analyze()">Analyze</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        async function analyze() {
+            const text = document.getElementById("inputText").value;
+
+            const response = await fetch("/feedback", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ text })
+            });
+
+            const data = await response.json();
+
+            document.getElementById("result").innerText =
+                "Sentiment: " + data.sentiment + "\nSummary: " + data.summary;
+        }
+    </script>
+
+</body>
+</html>
